@@ -1,6 +1,6 @@
 package bits;
 
-public class Problem1 
+public class DiffBits
 {
 	/**
 	 * Given two numbers a and b
