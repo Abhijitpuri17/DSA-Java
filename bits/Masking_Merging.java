@@ -18,8 +18,6 @@ public class Masking_Merging
 	}
 	
 	/**
-	 * @param a
-	 * @param pos
 	 * @return number after clearing bit at given position i.e. setting bit to 0
 	 */
 	static long clearBit(long a, long pos)
