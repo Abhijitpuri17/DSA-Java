@@ -8,7 +8,7 @@ public class MergeSort
 	{
 		int arr[] = {10,1,2,3,42,100,4,2,3};
 		
-		mergeSort(arr, 0, arr.length) ;                   // start = 0 and end = lastPos + 1
+		mergeSort(arr, 0, arr.length-1) ;                   // start = 0 and end = lastPos
 		
 		for (int i = 0 ; i < arr.length ; i++)
 		System.out.print(arr[i] + " ") ;
@@ -16,30 +16,31 @@ public class MergeSort
 	
 	static void mergeSort(int arr[] , int start , int end)
 	{
-		if (end - start < 2) return ;               // only 1 element
+		if (end <= start) return ;               // only 1 element
 		
 		int mid = (start+end)/2 ;                  
 		
 		mergeSort(arr, start, mid);
-		mergeSort(arr, mid, end);
-		merge(arr, start,mid , end);
+		mergeSort(arr, mid+1, end);
+		merge(arr, start,mid+1 , end);
 	}
 	
 	static void merge(int arr[] , int start , int mid , int end)
 	{
-		if (arr[mid-1] < arr[mid]) return ;
+		int temp[] = new int[end-start+1] ;
 		
-		int i = start ;
-		int j = mid ;
-		int tempIndex =0 ;
-		int temp[] = new int[end-start] ;
-		while (i < mid && j < end)
+		int i = start , j = mid , k = 0 ;
+		
+		while (i < mid && j <= end)
 		{
-			temp[tempIndex++] = arr[i] <= arr[j] ? arr[i++] : arr[j++] ;
+			if (arr[i] < arr[j]) temp[k++] = arr[i++] ;
+			else temp[k++] = arr[j++] ;
 		}
 		
-		System.arraycopy(arr, i, arr, start+tempIndex, mid-i) ;
-		System.arraycopy(temp, 0, arr, start, tempIndex) ;
+		while (i < mid) temp[k++] = arr[i++] ;
+		while(j <= end) temp[k++] = arr[j++] ;
+		
+		for (i = start ; i <= end ; i++) arr[i] = temp[i-start] ;
 	}
 
 }
