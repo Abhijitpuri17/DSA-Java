@@ -15,7 +15,7 @@ public class MaxHeap
 	public static void main(String[] args) 
 	{
 		
-		int arr[] = {1,2,3,4,5,6,7,8,9} ;
+		int arr[] = {4, 5, 6, 7, 8, 9, 2, 1, 3} ;
 		
 		// inserting each element makes this array a max heap
 		for (int i = 1 ; i <= arr.length ; i++) insert(arr, i);
@@ -58,17 +58,12 @@ public class MaxHeap
 				int temp2 = arr[i-1] ;
 				arr[i-1] = arr[j-1] ;
 				arr[j-1]=temp2 ;
-				i = j ;
-				j = 2*i ;
 			}
+			i = j ;
+			j = 2*i ;
 		}
 		arr[n-1] = temp;
 	}
 	
 	
-	
-
-	
-	
-
 }
