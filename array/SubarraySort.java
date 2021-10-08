@@ -12,7 +12,7 @@ public class SubarraySort
 		int x = arr[i] ;
 		if (i == 0) return x > arr[1] ;
 		
-		if (i == arr.length - 1) return x < arr[1] ;
+		if (i == arr.length - 1) return x < arr[arr.length-1] ;
 		
 		return x > arr[i+1] || x < arr[i-1] ;
 	}
@@ -35,7 +35,6 @@ public class SubarraySort
 		if (smallest == Integer.MAX_VALUE) return new int[] {-1, -1} ;
 		
 		int smallest_ind = 0, largest_ind = n-1 ;
-		
 		
 		while (smallest_ind < n) {
 			if (arr[smallest_ind] <= smallest) smallest_ind++ ;

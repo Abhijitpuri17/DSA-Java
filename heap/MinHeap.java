@@ -6,7 +6,7 @@ public class MinHeap
 	public static void main(String[] args) 
 	{
 	
-        int arr[] = {4, 5, 6, 7, 8, 9, 2, 1, 3} ;
+        int arr[] = {1, 50, 4, 100, 2, 3, 5, 20, 50, 100} ;
 		
 		// inserting each element makes this array a min heap
 		for (int i = 1 ; i <= arr.length ; i++) insert(arr, i);
@@ -25,7 +25,7 @@ public class MinHeap
 	static void insert(int arr[], int i)
 	{
 		int temp = arr[i - 1] ;
-		while (i > 1 && arr[i/2] > temp)
+		while (i > 1 && arr[i/2-1] > temp)
 		{
 			arr[i-1] = arr[i/2 - 1] ;
 			i = i/2 ;

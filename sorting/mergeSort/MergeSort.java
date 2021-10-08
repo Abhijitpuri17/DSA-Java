@@ -1,4 +1,4 @@
-package sorting;
+package sorting.mergeSort;
 
 
 public class MergeSort 
@@ -8,7 +8,7 @@ public class MergeSort
 	{
 		int arr[] = {10,1,2,3,42,100,4,2,3};
 		
-		mergeSort(arr, 0, arr.length-1) ;                   // start = 0 and end = lastPos
+		mergeSort(arr, 0, arr.length-1) ;               
 		
 		for (int i = 0 ; i < arr.length ; i++)
 		System.out.print(arr[i] + " ") ;
@@ -16,7 +16,7 @@ public class MergeSort
 	
 	static void mergeSort(int arr[] , int start , int end)
 	{
-		if (end <= start) return ;               // only 1 element
+		if (end <= start) return ;        
 		
 		int mid = (start+end)/2 ;                  
 		
