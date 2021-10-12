@@ -25,9 +25,12 @@ public class Housing
 		
 		while (j <= n && i <= j)
 		{
+			// if curr_sum is less, expand the window
 			if (curr_sum < k && j < n) {
 				curr_sum += plots[j++] ;
 			} 
+			
+			// if currsum = k , we got one answer
 			else if (curr_sum == k) 
 			{
 				ans.add(new Integer[] {i, j-1}) ;
@@ -36,6 +39,11 @@ public class Housing
 				
 				i++ ; j++ ;
 			} 
+			
+			// if curr_sum is more, contract the window
+			else if (i == j) {
+				j++ ;
+			}
 			else if (i < j)
 			{
 				curr_sum -= plots[i] ;
@@ -50,7 +58,7 @@ public class Housing
 	public static void main(String[] args) 
 	{
 		int plots[] = {1, 3, 2, 1, 4, 1, 3, 2, 1, 1, 4};
-		int k = 8 ;
+		int k = 3 ;
 		List<Integer[]> ans = housing(plots, k) ;
 		
 		for (Integer[] x : ans) System.out.println(x[0] + " " + x[1]);
