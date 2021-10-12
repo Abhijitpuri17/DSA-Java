@@ -2,6 +2,16 @@ package binarySearch;
 
 public class FrequencyCount
 {
+
+/**
+ * Given an sorted array. Find the frequency of given key in the array
+ * 
+ * We find the first and last occurance of key to get frequency
+ * 
+ * to find first occurance, perform binary search on array. Even if we get the key, store that pos and perform binary search on left part
+ * 
+ * to find last occurance, perform binary search on array. Even if we get the key, store that pos and perform binary search on right part
+ */
 	
 	static int first_occurance(int arr[], int key)
 	{

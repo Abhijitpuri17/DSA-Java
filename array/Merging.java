@@ -2,7 +2,9 @@ package array;
 
 public class Merging 
 {
-	// Merge two sorted arrays in sorted order
+	/**
+	Given two sorted arrays. Merge them such that entire array is also sorted
+	*/
 	
 	static int[] merge(int a[], int b[])
 	{

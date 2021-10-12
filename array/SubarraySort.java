@@ -21,6 +21,8 @@ public class SubarraySort
 	{
 		int n = arr.length;
 		
+		// first we find the smallest and largest element which are out of order
+		
 		int smallest = Integer.MAX_VALUE , largest = Integer.MIN_VALUE ;
 		
 		for (int i = 1 ; i < n-1 ; i++)
@@ -36,11 +38,14 @@ public class SubarraySort
 		
 		int smallest_ind = 0, largest_ind = n-1 ;
 		
+		 // find the position where that smallest element should be present
 		while (smallest_ind < n) {
 			if (arr[smallest_ind] <= smallest) smallest_ind++ ;
 			else break ;
 		}
 		
+
+	    // find the position where that largest element should be present
 		while (largest_ind >= 0) {
 			if (arr[largest_ind] >= largest) largest_ind-- ;
 			else break ;

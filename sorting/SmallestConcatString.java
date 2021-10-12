@@ -6,6 +6,8 @@ import java.util.Comparator;
 public class SmallestConcatString 
 {
 	
+	// sort the strings. First compare their length then check alphabetically
+	
 	public static void main(String[] args)
 	{
 		String[] strings = {"a", "ab", "aba"};

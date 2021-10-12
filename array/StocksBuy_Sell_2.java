@@ -12,6 +12,8 @@ public class StocksBuy_Sell_2
 	static int maxProfit(int[] prices)
 	{
 		int profit = 0 ;
+		
+		// we buy at each local minima and sell at the local maxima to get max Profit
 		for (int i = 0 ; i < prices.length-1 ; i++)
 		{
 			if (prices[i+1] > prices[i]) profit += prices[i+1] - prices[i] ;

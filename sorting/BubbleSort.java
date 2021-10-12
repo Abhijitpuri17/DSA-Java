@@ -3,6 +3,16 @@ package sorting;
 public class BubbleSort 
 {
 
+	/**
+	 * 
+	 * Keep comparing elements at adjacent positions, if they are wrongly placed, swap
+	 * 
+	 * in one loop largest element will be at correct position
+	 * 
+	 * perform this loop n-1 times so that all elements are sorted
+	 * 
+	 */
+	
 	public static void main(String[] args)
 	{
 	

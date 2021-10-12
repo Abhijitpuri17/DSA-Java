@@ -4,6 +4,9 @@ package sorting;
 public class insertionSort 
 {
 
+	// A single element array is always sorted. First element is a sorted array.
+	// for i in 1 to n-1 : place the element at arr[i] in sorted part of array
+	
 	public static void main(String[] args) 
 	{
 		int arr[] = {10,1,2,3,42,100,4,2,3};

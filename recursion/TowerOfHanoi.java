@@ -7,17 +7,18 @@ public class TowerOfHanoi
 	 * We have to transfer all discs to third tower.
 	 * 1) At a time only one disc can be moved
 	 * 2) larger disc can not be placed on smaller disc
-	 * @param n = number of discs
-	 * @param source = 1st tower number
-	 * @param helper
-	 * @param destination = 3rd tower number
 	 */
 	static void toh(int n, int source, int helper, int destination)
 	{
 		if (n > 0)
 		{
+			// transfer n-1 disks from source to helper using recursion
 			toh(n-1, source, destination, helper);
+			
+			// transfer largest disk from source to destination
 			System.out.println(source + " --> "+ destination);
+			
+			// transfer these n-1 disks from helper to destination using recursion
 			toh(n-1, helper,source, destination);
 		}
 		

@@ -19,6 +19,9 @@ public class PairSum
 		
 		for (int i = 0 ; i < arr.length; i++)
 		{
+			
+			// for each arr[i] we search for x = target-arr[i] in set. 
+			//If present we got the answer
 			int x = target - arr[i] ;
 			if (set.contains(x)) 
 			{
@@ -26,6 +29,9 @@ public class PairSum
 				ans[1] = x;
 				return ans ;
 			}
+			
+
+	        // if x is not present in set. we add current element arr[i] in set and check for next element in arr
 			set.add(arr[i]) ;
 		}	
 		return ans ;

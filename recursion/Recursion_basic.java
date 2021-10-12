@@ -4,36 +4,35 @@ import java.math.BigInteger; ;
 
 public class Recursion_basic 
 {
-	/**
-	 * @param n = natural number
-	 * @return sum of first n natural numbers
-	 */
+	
 	static int sum(int n)
 	{
+		// base case
 		if (n == 0) return 0 ;
+		
+		// recursive case
 		return sum(n-1)+n ;
 	}
 	
-	/**
-	 * @param n = natural number
-	 * @return factorial of n
-	 * BigInteger is a built-in class in java which can handle very big integers
-	 */
+	
 	static BigInteger fact(int n)
 	{
+		// base case
 		if (n == 1) return BigInteger.ONE;
+		
+		// recursive case
 		return fact(n-1).multiply(BigInteger.valueOf(n)) ;
 	}
 	
-	/**
-	 * @param a = base
-	 * @param b = power
-	 * @return a to the power b
-	 */
 	static long fastpower(long a, long b)
 	{
+		// base case
 		if (b == 0) return 1 ;
+		
+		// if power is even we can write a^b = (a*a)^b/2
 		if ((b & 1) == 0) return fastpower((a * a) , b/2)  ;
+		
+		// if power is odd we can write a^b = a*(a^b-1)
 		return fastpower(a, b-1) * a ;
 	}
 	

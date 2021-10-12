@@ -11,10 +11,19 @@ public class StocksBuy_Sell_1
 	
 	static int maxProfit(int prices[])
 	{
-		int min = prices[0] , max_profit = 0;
+		int min = prices[0] , max_profit = 0 ;
+
+	    // for each day, check if profit is maximum if stock was bought on some previous day 
+		//having minimum price till now
+	    // if this profit is more, update max_profit
+		
 		for (int i = 1 ; i < prices.length ; i++)
 		{
 			if (prices[i] - min > max_profit) max_profit = prices[i] - min ;
+			
+	        // if we get lower price we update the min_till_now so that for next days,
+			//we can check profit from this
+			
 			if (min > prices[i]) min = prices[i] ;
 		}
 		return max_profit ;

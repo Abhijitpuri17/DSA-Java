@@ -12,11 +12,13 @@ public class StringPermutation
 		}
 		
 		/**
-		 * For kth position in ans , each character in string s should be added in ans
-		 * after deciding kth pos, recursively call the fun with k = k+1
-		 * Once all recursive calls after kth pos are completed. the char taken for kth
-		 * pos will again be available for other positions
+		 * 	For kth position in ans , each character in string s should be added in ans
+		 * 	after deciding kth pos, recursively call the fun with k = k+1
+		 * 	Once all recursive calls after kth pos are completed. the char taken for kth
+		 * 	pos will again be available for other positions
+		 * 
 		 */
+		
 		for (int i = 0 ; i < flags.length ; i++)
 		{
 			if (flags[i] == false)
@@ -27,6 +29,7 @@ public class StringPermutation
 				flags[i] = false ;
 			}
 		}
+		
 		
 	}
 	

@@ -27,19 +27,26 @@ public class MinPairs
 	
 	static void minPairs(int a[], int b[])
 	{
+		// sort the second array
 		Arrays.sort(b);
 		int min = Integer.MAX_VALUE, p = -1 , q = -1 ;
+		
+
+	  // loop through first array. Find lower_bound for that element in second array  (lower_bound = pos of nearest element in sorted arr such that 
+	  // element at pos is greater than or equal to given key )
 		for (int i = 0 ; i < a.length ; i++)
 		{
 			int lb = lower_bound(b, a[i]) ;
 			System.out.println(lb);
 			
+			// check diff between key and upper bound and update ans accordingly
 			if ( lb-1 >= 0 && a[i] - b[lb-1] < min) {
 				min = a[i] - b[lb-1] ;
 				p = a[i] ;
 				q = b[lb - 1] ;
 			}
 			
+			// now check diff between key and lower bound and update ans accordingly
 			if ( lb < b.length && b[lb] - a[i] < min){
 				min = b[lb] - a[i] ;
 				p = b[lb] ;

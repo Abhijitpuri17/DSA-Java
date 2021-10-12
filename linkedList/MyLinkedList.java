@@ -13,6 +13,14 @@ public class MyLinkedList
 		private Node head , last ;
 		private int size ;
 		
+		public Node getHead() {
+			return head;
+		}
+		
+		public void setHead(Node head) {
+			this.head = head;
+		}
+		
 		//CONSTRUCTORS
 		public  MyLinkedList()
 		{
@@ -51,6 +59,8 @@ public class MyLinkedList
 		// METHOD TO DISPLAY LL
 		public void display()
 		{
+			if (head == null) return ;
+			
 			Node currNode = head ;
 			
 			while (currNode.getNext() != null) 
@@ -199,16 +209,9 @@ public class MyLinkedList
 			}
 			
 			head = qNode ;
-			
-			
-			// CALLING RECURSIVE METHOD IS AN ALTERNATIVE WAY
-			
-//			recursiveReverse(head , null);
-//			Node tempNode =head ;
-//			head = last ;
-//			last = tempNode ;
-			
+						
 		}
+		
 		
 		// RECURSIVE METHOD TO REVERSE LL
 		public void recursiveReverse(Node p , Node q)
@@ -218,7 +221,7 @@ public class MyLinkedList
 			{
 				 recursiveReverse(p.getNext() , p);
 			     p.setNext(q);
-			}
+			} else head = q ;
 		}
 		
 		
@@ -243,6 +246,52 @@ public class MyLinkedList
 			    if (p == q) return true ;
 			}
 			return false ;
+		}
+		
+		public void makeLoop(int pos)
+		{
+			Node curr = head ;
+			Node start_of_loop = head ;
+			
+			while (curr.getNext() != null)
+			{
+				if (pos > 0) {
+					start_of_loop = start_of_loop.getNext();
+					pos-- ;
+				}
+				
+				curr = curr.getNext();	
+			}
+			
+			if (pos > 0) return ;
+			
+			curr.setNext(start_of_loop);
+		}
+		
+		public void removeLoop()
+		{
+			Node slow = head , fast = head ;
+			
+			if (fast == null || fast.getNext() == null) return ;
+			
+			do {
+				slow = slow.getNext();
+				fast = fast.getNext().getNext();
+				
+				if (fast == null || fast.getNext() == null) {
+					System.out.println("NO LOOP");
+					return ;
+				}
+				
+			} while(fast != slow) ;
+			
+			fast = head;
+			while (fast.getNext() != slow.getNext()) {
+				fast = fast.getNext();
+				slow = slow.getNext();
+			}
+			
+			slow.setNext(null);
 		}
 		
 		

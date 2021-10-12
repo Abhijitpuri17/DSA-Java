@@ -4,6 +4,13 @@ package sorting;
 public class SelectionSort 
 {
 	
+	/**
+	 * Select the smallest element in array (from 0 to n-1) and swap it with first element
+	 * 
+	 * Repeat the same for arr from 1 to n-1... then 2 to n-1.. and so on
+	 * 
+	 */
+	
 
 	public static void main(String[] args)
 	{

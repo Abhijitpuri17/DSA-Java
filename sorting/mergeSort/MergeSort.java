@@ -3,6 +3,19 @@ package sorting.mergeSort;
 
 public class MergeSort 
 {
+	
+	/**
+	 * 
+	 *  It is a divide and conquer algorithm.  (dividing is logical not physical)
+	 *  
+	 *  A single element array is always sorted.
+	 * 
+	 *  Keep dividing the arrays until we get single element arrays. Then start merging them back in sorted order 
+	 * 
+	 */
+
+
+	
 
 	public static void main(String[] args) 
 	{
@@ -25,6 +38,7 @@ public class MergeSort
 		merge(arr, start,mid+1 , end);
 	}
 	
+	// This is function to merge two sorted arrays.
 	static void merge(int arr[] , int start , int mid , int end)
 	{
 		int temp[] = new int[end-start+1] ;
