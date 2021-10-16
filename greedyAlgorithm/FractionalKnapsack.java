@@ -22,6 +22,8 @@ public class FractionalKnapsack
 		for (int i = 0 ; i < profits.length ; i++)
 			Items[i] = new Pair(profits[i], weights[i]);
 		
+		// sort array according to profit/wight value
+		// we will first select those items which have more value of profit/weight
 		Compare.compare(Items, Items.length);
 		
 		for (int i = 0 ; i < profits.length ; i++)
@@ -39,11 +41,14 @@ public class FractionalKnapsack
 		float ans  = 0 ;
 		while (capacity > 0 && i < items.length)
 		{
+			// if weight of current item is less than capacity, we can add complete weight of item in knapsack
 			if (items[i].weight < capacity) 
 			{ 
 				ans += items[i].profit;
 			    capacity -= items[i++].weight;
 			}
+			
+			// if weight > capacity then we have add some fraction of that weight
 			else 
 			{
 				ans += ((float)items[i].profit/items[i].weight)*capacity ;
