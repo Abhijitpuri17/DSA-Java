@@ -6,36 +6,58 @@ package bits;
 public class Masking_Merging 
 {
 	
-	/** 
-	 * @param a = number
-	 * @param pos = position where bit has to be set i.e. set bit to 1
-	 * @return number after setting bit at given position
-	 * This is called as merging
-	 */
-	static long setBit(long a, long pos)
-	{
-		return a | (1 << pos) ;
-	}
-	
-	/**
-	 * @return number after clearing bit at given position i.e. setting bit to 0
-	 */
-	static long clearBit(long a, long pos)
-	{
-	    return (a & ~(1 << pos)) ;
-	}
-	
-	/**
-	 * @param a = number to check
-	 * @param pos = position at which bit has to be found
-	 * @return bit at given position for given number (1 or 0)
-	 */
-	static int findBit(long a, long pos)
-	{
-		long mask = 1 << pos ;
-		if ((a & mask) == 0) return 0 ;
-		return 1 ;
-	}
+    static int getBit(int n , int pos)
+    {
+        int mask = 1 << pos ;
+        if ((n&mask) == 0) return 0 ;
+        return 1 ;
+    }
+
+    static int setBit(int n, int pos)
+    {
+        // mask has bit 1 at pos and all other 0
+        int mask = 1 << pos ;
+        n |= mask ;
+        return n ;
+    }
+
+    static int clearBit(int n, int pos)
+    {
+        // mask has 0 bit at pos and 1 at all other positions
+        int mask = ~(1 << pos) ;
+        n &= mask ;
+        return n ;
+    }
+
+    static int clearLastLBits(int n , int l)
+    {
+        // 111 ... (0) l times
+        int mask = (-1<<l) ;
+        
+        n &= mask ;
+        return n ;
+    }
+
+    static int clearBitsInRange(int n , int i, int j)
+    {
+        int a = (-1 << (j+1)) ;
+        int b = (1 << i) - 1 ;
+        // mask has 0 bits in range [i, j]
+        int mask = a|b ;
+        n &= mask ;
+        return n ;
+    }
+
+    static int setBitsInRangeTo(int n, int m , int i, int j)
+    {
+        n = clearBitsInRange(n, i, j) ;
+
+        int mask = m << i ;
+
+        n |= mask ;
+
+        return n ;
+    }
 	
 
 	public static void main(String[] args) 
