@@ -22,10 +22,10 @@ public class MatrixExponentiation
         {
             Mat res = new Mat(size);
 
-            for (int i = 0; i < 2 ; i++)
+            for (int i = 0; i < size ; i++)
             {
-                for (int j = 0 ; j < 2 ; j++) {
-                    for (int k = 0; k < 2; k++) {
+                for (int j = 0 ; j < size ; j++) {
+                    for (int k = 0; k < size; k++) {
                         res.m[i][j] += m[i][k] % mod * b.m[k][j] % mod;
                         res.m[i][j] %= mod;
                     }
