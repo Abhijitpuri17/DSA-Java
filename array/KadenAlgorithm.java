@@ -1,6 +1,6 @@
 package array;
 
-public class KadenAlgorithm 
+public class KadenAlgorithm
 {
 	// To find max sum of sub-array from given array
 	
