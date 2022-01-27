@@ -25,15 +25,6 @@ public class NQueens
             if (board[k][l] == 'Q') return false ;
         }
 
-        for (int k = i , l = j ; k < n && l < n ; k++, l++)
-        {
-            if (board[k][l] == 'Q') return false ;
-        }
-
-        for (int k = i , l = j ; k < n && l >= 0 ; k++, l--)
-        {
-            if (board[k][l] == 'Q') return false ;
-        }
 
         for (int k = i , l = j ; k >= 0 && l < n ; k--, l++)
         {
