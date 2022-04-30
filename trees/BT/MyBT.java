@@ -23,8 +23,28 @@ public class MyBT
 		createBT(arr);
 	}
 	
+	public void preOrderBuild()
+	{
+		System.out.println("Enter preorder");
+		
+		root = r_preorder_build();
+	}
 	
-	public void createBT() 
+	Node r_preorder_build()
+	{
+		int x = sc.nextInt() ;
+		
+		if (x == -1) return null ;
+		
+		Node n = new Node(x, null, null) ;
+		
+		n.setLeftChild(r_preorder_build()) ;
+		n.setRightChild(r_preorder_build()) ;
+
+		return n ;
+	}
+	
+	public void createBT()
 	{
 		System.out.println("Enter root element : ") ;
 		root = new Node(sc.nextInt() , null , null) ;
@@ -167,16 +187,28 @@ public class MyBT
 		  Queue<Node> queue = new LinkedList<>();
 		  Node p = root ;
 		  queue.add(p) ;
+		  queue.add(null) ;
 		  
 		  while (!queue.isEmpty())
 		  {
 			  p = queue.poll();
-			  System.out.print(p.getVal() + " ");
-			  if (p.getLeftChild() != null)
-			  queue.add(p.getLeftChild()) ;
-			  if (p.getRightChild() != null)
-			  queue.add(p.getRightChild()) ;	  
-		  }
+			  
+			  if (p == null) 
+			  {
+				  if (!queue.isEmpty()) {
+				  System.out.println();
+				  queue.add(null) ;
+				  }
+			  } 
+			  else 
+			  {
+				  System.out.print(p.getVal() + " ");
+				  if (p.getLeftChild() != null)
+				  queue.add(p.getLeftChild()) ;
+				  if (p.getRightChild() != null)
+				  queue.add(p.getRightChild()) ;	  
+			  }
+		}
 		  System.out.println();
 		  
 	  }

@@ -28,7 +28,6 @@ public class LongestConsecutiveSubsequence
 				while (set.contains(curr)) 
 					curr++ ;
 				
-
                 // if it is greater than maxTillNow update max
 				ans = Math.max(curr - arr[i], ans) ;	
 			}

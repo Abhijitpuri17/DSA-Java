@@ -98,8 +98,7 @@ public class MyBST extends MyBT
 		if (p.getVal() < x) p.setRightChild(delete(p.getRightChild(), x));
 		else if (p.getVal() > x) p.setLeftChild(delete(p.getLeftChild(), x));
 		else 
-		{
-			
+		{	
 			if ((Height(p.getLeftChild())) > (Height(p.getRightChild())))
 			{
 				Node q = InPre(p.getLeftChild()) ;

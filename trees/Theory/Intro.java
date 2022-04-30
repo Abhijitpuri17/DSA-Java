@@ -50,9 +50,9 @@ public class Intro
 		             /     \                                    /   \
 		            /       \                                  /     \
 		           O         O                                O       O
-                          / \       / \                               |      / \
-                         /   \     /   \                              |     /   \
-                        O     O   O     O                             O    O     O
+                  / \       / \                               |      / \
+                 /   \     /   \                              |     /   \
+                O     O   O     O                             O    O     O
 
 --------------------------------------------------------------------------------------------------------------------------
  
@@ -147,16 +147,6 @@ public class Intro
                      There can be a blank at last.
                      
                      FULL BT is always a complete BT but vice versa need not be true.
-
-
-
-
-
-
-
-
-
-
 
 
 

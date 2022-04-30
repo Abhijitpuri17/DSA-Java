@@ -46,7 +46,7 @@ public class MaxInWindow
 		for (int i = k ; i < n ; i++)
 		{
 			// remove all the elements which are out of range for current window
-			while (!dq.isEmpty() &&dq.peekFirst() <= i - k) dq.pollFirst();
+			while (!dq.isEmpty() && dq.peekFirst() <= i - k) dq.pollFirst();
 			
 			// remove if any smaller elements than current element are present in dq 
 			while (!dq.isEmpty() && arr[dq.peekLast()] <= arr[i]) dq.pollLast();

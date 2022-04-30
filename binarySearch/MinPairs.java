@@ -37,7 +37,6 @@ public class MinPairs
 		for (int i = 0 ; i < a.length ; i++)
 		{
 			int lb = lower_bound(b, a[i]) ;
-			System.out.println(lb);
 			
 			// check diff between key and upper bound and update ans accordingly
 			if ( lb-1 >= 0 && a[i] - b[lb-1] < min) {

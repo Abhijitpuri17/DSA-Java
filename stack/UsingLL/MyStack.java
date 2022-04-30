@@ -16,7 +16,6 @@ package stack.UsingLL;
 		  }
 		
 		
-	         // add new node at top whose next points to current top. Then make top = newNode
 		 public void push(int val) throws Exception
 			{
 			   Node newNode = new Node(val , top) ;
@@ -24,8 +23,6 @@ package stack.UsingLL;
 			   size++ ;
 			 }
 		
-	        // To remove topmost element simply make top = top.next
-	        // In java we dont have to free memory, Garbage collector in java does this work.
 		 public void pop() throws Exception
 			 {
 			     if (top == null) throw new Exception("Stack underflow") ;
@@ -79,7 +76,6 @@ package stack.UsingLL;
 	}
 
 	
-   
 	class Node 
     {
 		private int val ;

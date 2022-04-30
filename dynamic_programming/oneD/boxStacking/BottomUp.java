@@ -45,10 +45,10 @@ public class BottomUp
 		Arrays.sort(boxes, new boxComparator());
 	
 		int n = boxes.length;
-		int dp[] = new int[n] ;
+		int[] dp = new int[n] ;
 		dp[0] = boxes[0].height ;
 		
-		List<Box> boxesDP[] = new ArrayList[n] ;
+		List<Box>[] boxesDP = new ArrayList[n] ;
 		
 		boxesDP[0] = new ArrayList<>();
 		boxesDP[0].add(boxes[0]) ;

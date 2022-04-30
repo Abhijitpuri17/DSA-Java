@@ -36,7 +36,6 @@ public class TripletsSum
 				 else if (curr_sum < target) j++ ;
 				 else k-- ;
 			}	
-			
 		}
 
 		return ans ;	

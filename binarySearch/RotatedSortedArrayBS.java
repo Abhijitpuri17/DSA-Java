@@ -12,7 +12,7 @@ public class RotatedSortedArrayBS
 			int mid = (s+e)/2 ;
 			if (arr[mid] == key) return mid ;
 			
-			if (arr[s] < arr[mid])
+			if (arr[s] <= arr[mid])
 			{
 				if (arr[mid] > key && arr[s] <= key) e = mid-1 ;
 				else s= mid+1 ;
@@ -29,8 +29,8 @@ public class RotatedSortedArrayBS
 
 	public static void main(String[] args) 
 	{
-		int arr[] = {4, 5, 6, 7, 0, 1, 2, 3} ;
-		System.out.println(rotated_bs(arr, 6));
+		int arr[] = {3, 1} ;
+		System.out.println(rotated_bs(arr, 1));
 
 	}
 

@@ -8,7 +8,6 @@ package trees.AVLTrees;
      public class MyAVLTree 
 	{
 	
-		
 		Node root ;
 		
 		public void insert(Node p ,int x)

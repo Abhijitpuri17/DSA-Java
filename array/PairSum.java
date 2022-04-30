@@ -15,14 +15,15 @@ public class PairSum
 	static int[] pair_sum(int arr[] , int target)
 	{
 		int ans[] = new int[2] ;
-		HashSet<Integer> set = new HashSet<>();
+		
+		HashSet<Integer> set = new HashSet<>() ;
 		
 		for (int i = 0 ; i < arr.length; i++)
 		{
-			
 			// for each arr[i] we search for x = target-arr[i] in set. 
-			//If present we got the answer
+			// If present we got the answer
 			int x = target - arr[i] ;
+			
 			if (set.contains(x)) 
 			{
 				ans[0] = arr[i] ;
@@ -30,10 +31,10 @@ public class PairSum
 				return ans ;
 			}
 			
-
 	        // if x is not present in set. we add current element arr[i] in set and check for next element in arr
 			set.add(arr[i]) ;
-		}	
+		}
+		
 		return ans ;
 	}
 

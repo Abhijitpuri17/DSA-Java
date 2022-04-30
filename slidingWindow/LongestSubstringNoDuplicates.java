@@ -5,27 +5,28 @@ import java.util.LinkedHashSet;
 public class LongestSubstringNoDuplicates
 {
 	
+	// Find the longest substring from string s such that substring has no duplicate
+	
 	static String unique_substring(String s)
 	{
 		
-		// elements are stored in same order we add them in linkedHashSet
 		LinkedHashSet<Character> set = new LinkedHashSet<>();
 		
 		int i = 0 , j = 0 , start = 0, end = 0;
-		
 		
 		while (j < s.length())
 		{
 			char c = s.charAt(j) ;
 			
-			// if c is already present in window. Start contracting the window from left till c is not removed.
+			// if our ans string already contains c, contract the window from
+			// starting until c is removed from window
 			while (set.contains(c))
 			{
 				set.remove(set.iterator().next()) ;
 				i++ ;
 			}
 			
-			// now add c at last and check if this substring can be longest or not
+			// now add c to ans string and check if it longest till now
 			set.add(c) ;
 			if (j - i > end - start) {
 				start = i ;

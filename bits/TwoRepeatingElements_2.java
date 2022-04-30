@@ -44,4 +44,16 @@ public class TwoRepeatingElements_2
 		return 1 ;
 	}
 
+	
+	// 1 2 3 4 5     4
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

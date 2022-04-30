@@ -20,7 +20,7 @@ public class AngryBirds
 		int last_loc = nests[0] ;
 		
 		// loop through the nests and check how many birds can be placed such that dist between
-		//any two birds is greater than or equal to sep
+		//any two birds is greater than or equal to sep(d)
 		for (int i = 1 ; i < nests.length; i++)
 		{
 			int curr_loc = nests[i] ;
@@ -48,9 +48,10 @@ public class AngryBirds
 			int mid  = (s+e)/2 ;
 			
 			// check if distance = mid is feasible or not i.e. can we place all the birds 
-			//such min distance = mid
+			// such min distance = mid
 			// if we can place with distance = mid, store ans = mid and try to get larger 
 			//value for min distance i.e. go to right part of array
+			
 			if (canPlaceBirds(nests, mid, b))
 			{
 				ans = mid ;
@@ -58,7 +59,7 @@ public class AngryBirds
 			}
 			
 			// if we can not place all the birds such that min distance = mid, min distance must
-			//be reduced. i.e go to left part of the array
+			// be reduced. i.e go to left part of the array
 			else e = mid - 1 ;
 		}
 		return ans ;

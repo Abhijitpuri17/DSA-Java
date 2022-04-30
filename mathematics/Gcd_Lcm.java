@@ -4,6 +4,7 @@ public class Gcd_Lcm
 {
 	static int gcd(int a , int b)
 	{
+		if (b == 0) return a ;
 		while ((a % b) != 0)
 		{
 			int temp = a % b ;
@@ -22,7 +23,7 @@ public class Gcd_Lcm
 
 	public static void main(String[] args) 
 	{
-		System.out.println(gcd(36, 24));
+		System.out.println(gcd(8, 4));
 		System.out.println(lcm(8, 12));
 	}
 }

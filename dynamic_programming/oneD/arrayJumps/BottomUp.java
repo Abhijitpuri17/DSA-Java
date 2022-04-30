@@ -3,11 +3,11 @@ package dynamic_programming.oneD.arrayJumps;
 public class BottomUp 
 {
 	
-	static int minJumps(int arr[])
+	static int minJumps(int[] arr)
 	{
 		int n = arr.length;
 		
-		int dp[] = new int[n] ;
+		int[] dp = new int[n] ;
 		
 		for (int i = n-2; i >= 0 ; i--)
 		{
@@ -28,7 +28,7 @@ public class BottomUp
 
 	public static void main(String[] args) 
 	{
-		int arr[] = {3, 4, 2, 1, 2, 3, 10, 1, 1, 1, 2, 5} ;
+		int[] arr = {3, 4, 2, 1, 2, 3, 10, 1, 1, 1, 2, 5} ;
 		System.out.println(minJumps(arr));
 
 	}

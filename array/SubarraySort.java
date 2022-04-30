@@ -12,7 +12,7 @@ public class SubarraySort
 		int x = arr[i] ;
 		if (i == 0) return x > arr[1] ;
 		
-		if (i == arr.length - 1) return x < arr[arr.length-1] ;
+		if (i == arr.length - 1) return x < arr[arr.length-2] ;
 		
 		return x > arr[i+1] || x < arr[i-1] ;
 	}
@@ -44,7 +44,6 @@ public class SubarraySort
 			else break ;
 		}
 		
-
 	    // find the position where that largest element should be present
 		while (largest_ind >= 0) {
 			if (arr[largest_ind] >= largest) largest_ind-- ;

@@ -32,12 +32,6 @@ public class MaxHeap
 	// O(log n)
 	static void insert(int arr[] , int i) 
 	{
-		// array before i - 1 pos has become a max heap. Now arr[i-1] has to be inserted in heap.
-    
-        	// Process of inserting element in maxHeap :
-    		// 1) insert it last pos. 2) check the parent of that element(for the ith element parent = element at i/2)
-   		// if parent is smaller, swap them. .. Keep repeating step 2 until we get parent > children or we reach at root
-		
 		int temp = arr[i-1] ;
 				
 		while (i > 1 && arr[i/2-1] < temp) 
@@ -52,15 +46,6 @@ public class MaxHeap
 	// O(log n)
 	static void delete(int arr[] , int n)
 	{
-		
-		// Delete the root .So now size of heap decreases and one remaining place is there. We place the deleted element there.
-
-    		// Process of deleting from heap :
-    		// 1) Delete the root.  2) Insert the last element of heap at root.  3) if root is smaller than any one of the children. 
-		//    Swap the elements from parent and children
-    		// keep repeating step 2 until we get parent > children or we reach at last of the heap
-
-		
 		int temp = arr[0] ;
 		int i = 1, j = 2*i ;
 		arr[0] = arr[n-1] ;

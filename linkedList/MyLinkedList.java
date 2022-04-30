@@ -295,13 +295,5 @@ public class MyLinkedList
 		}
 		
 		
-		
-		
 	}
 		
-		
-		
-	
-		 
-		
-	
